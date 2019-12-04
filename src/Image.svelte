@@ -17,6 +17,7 @@
       scaleY: scale
     })
     canvas.add(fabricImage)
+    fabricImage.sendToBack()
   })
 
   onDestroy(() => {

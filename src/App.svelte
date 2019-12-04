@@ -2,11 +2,17 @@
   import ImageLoader from './ImageLoader.svelte'
   import Canvas from './Canvas.svelte'
   import Image from './Image.svelte'
+  import Head from './Head.svelte'
 
-  let canvas, image
+  let canvas, image, heads = []
 
   function replaceImage (e) {
     image = e.detail.image
+    heads = []
+  }
+
+  function addHead () {
+    heads = [...heads, { id: Date.now() }]
   }
 </script>
 
@@ -18,11 +24,18 @@
 
 <div class='container'>
   <ImageLoader on:load={replaceImage} />
+  <button class='btn btn-primary' on:click={addHead}>加一顆頭</button>
   <Canvas bind:canvas />
 
-  {#if canvas && image}
-    {#each [image] as image (image.src)}
-      <Image {canvas} {image} />
+  {#if canvas}
+    {#if image}
+      {#each [image] as image (image.src)}
+        <Image {canvas} {image} />
+      {/each}
+    {/if}
+
+    {#each heads as head (head.id)}
+      <Head {canvas} {head} />
     {/each}
   {/if}
 </div>
