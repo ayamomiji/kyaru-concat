@@ -84,7 +84,7 @@
 </style>
 
 <div class='container'>
-  <h1>街頭霸王 v0.1</h1>
+  <h1>接頭霸王 v0.1</h1>
   <div class='form-row'>
     <div class='col form-group'>
       <label>選一張圖:</label>
