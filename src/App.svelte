@@ -4,6 +4,7 @@
   import Canvas from './Canvas.svelte'
   import Image from './Image.svelte'
   import Head from './Head.svelte'
+  import Footer from './Footer.svelte'
 
   let canvas, image, scale, heads = []
   let result
@@ -103,6 +104,7 @@
     </div>
   </div>
   <Canvas bind:canvas />
+  <Footer />
 
   {#if canvas}
     {#if image}
