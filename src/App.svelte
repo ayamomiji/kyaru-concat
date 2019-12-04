@@ -6,6 +6,21 @@
 
   let canvas, image, heads = []
 
+  function handleKeydown (e) {
+    if (e.which === 8 || e.which === 46) { // backspace or delete key
+      deleteSelected()
+    }
+  }
+
+  function deleteSelected () {
+    const activeObjects = canvas.getActiveObjects()
+    activeObjects.forEach(activeObject => {
+      if (activeObject.head) {
+        heads = heads.filter(head => head.id !== activeObject.head.id)
+      }
+    })
+  }
+
   function replaceImage (e) {
     image = e.detail.image
     heads = []
@@ -21,6 +36,8 @@
       integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh'
       crossorigin='anonymous'>
 </svelte:head>
+
+<svelte:body on:keydown={handleKeydown} />
 
 <div class='container'>
   <ImageLoader on:load={replaceImage} />

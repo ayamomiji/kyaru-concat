@@ -12,6 +12,7 @@
     image.src = kyaru
     image.onload = function () {
       fabricImage = new fabric.Image(image, {
+        head,
         rotatingPointOffset: 15,
         cornerStyle: 'circle'
       })
