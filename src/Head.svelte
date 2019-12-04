@@ -14,7 +14,10 @@
       fabricImage = new fabric.Image(image, {
         head,
         rotatingPointOffset: 15,
-        cornerStyle: 'circle'
+        cornerStyle: 'circle',
+        cornerColor: 'red',
+        transparentCorners: false,
+        borderColor: 'red'
       })
       fabricImage.setControlVisible('ml', false)
       fabricImage.setControlVisible('mt', false)
