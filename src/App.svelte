@@ -53,7 +53,8 @@
         scaleY: image.scaleY / scale,
         left: image.left / scale,
         top: image.top / scale,
-        angle: image.angle
+        angle: image.angle,
+        flipX: image.flipX
       }))
     })
     result = outputCanvas.toDataURL('png')
