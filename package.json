@@ -1,5 +1,5 @@
 {
-  "name": "svelte-app",
+  "name": "kyaru-concat",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
@@ -16,6 +16,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "fabric": "^3.5.1",
     "sirv-cli": "^0.4.4"
   }
 }
