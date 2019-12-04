@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import { fabric } from 'fabric'
 
-  export const width = 640, height = 480
+  export const width = 1140, height = 855
   export let canvas
 
   let canvasEl

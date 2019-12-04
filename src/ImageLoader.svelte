@@ -17,8 +17,15 @@
     reader.readAsDataURL(e.target.files[0])
     e.target.value = null
   }
+
+  function triggerInput () {
+    input.click()
+  }
 </script>
 
-<input type='file' class='form-control-file' accept='image/*'
+<input type='file' class='d-none' accept='image/*'
     on:change={loadImage}
     bind:this={input} />
+<button class='btn btn-outline-secondary' on:click={triggerInput}>
+  上傳圖片
+</button>

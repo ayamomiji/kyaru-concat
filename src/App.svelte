@@ -83,9 +83,25 @@
 </style>
 
 <div class='container'>
-  <ImageLoader on:load={replaceImage} />
-  <button class='btn btn-primary' on:click={addHead}>加一顆頭</button>
-  <button class='btn btn-outline-secondary' on:click={output}>下載圖片</button>
+  <h1>街頭霸王 v0.1</h1>
+  <div class='form-row'>
+    <div class='col form-group'>
+      <label>選一張圖:</label>
+      <ImageLoader on:load={replaceImage} />
+    </div>
+    <div class='col form-group'>
+      <label>加頭:</label>
+      <button class='btn btn-outline-secondary' on:click={addHead}>
+        加一顆頭
+      </button>
+    </div>
+    <div class='col form-group'>
+      <label>下載並分享:</label>
+      <button class='btn btn-outline-secondary' on:click={output}>
+        下載圖片
+      </button>
+    </div>
+  </div>
   <Canvas bind:canvas />
 
   {#if canvas}
