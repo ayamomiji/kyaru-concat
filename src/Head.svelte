@@ -23,6 +23,8 @@
       canvas.add(fabricImage)
       canvas.centerObject(fabricImage)
       canvas.setActiveObject(fabricImage)
+
+      head.image = image
     }
   })
 

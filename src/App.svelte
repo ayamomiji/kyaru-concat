@@ -1,10 +1,12 @@
 <script>
+  import { fabric } from 'fabric'
   import ImageLoader from './ImageLoader.svelte'
   import Canvas from './Canvas.svelte'
   import Image from './Image.svelte'
   import Head from './Head.svelte'
 
-  let canvas, image, heads = []
+  let canvas, image, scale, heads = []
+  let result
 
   function handleKeydown (e) {
     if (e.which === 8 || e.which === 46) { // backspace or delete key
@@ -29,6 +31,35 @@
   function addHead () {
     heads = [...heads, { id: Date.now() }]
   }
+
+  function output () {
+    const width = image ? image.width : canvas.width
+    const height = image ? image.height : canvas.height
+
+    const outputCanvas = new fabric.Canvas(document.createElement('canvas'), {
+      width, height
+    })
+    // add original image
+    if (image) {
+      outputCanvas.add(new fabric.Image(image))
+    } else {
+      scale = 1
+    }
+    // add heads
+    canvas.getObjects().filter(object => object.head).forEach(image => {
+      outputCanvas.add(new fabric.Image(image.head.image, {
+        scaleX: image.scaleX / scale,
+        scaleY: image.scaleY / scale,
+        left: image.left / scale,
+        top: image.top / scale
+      }))
+    })
+    result = outputCanvas.toDataURL('png')
+  }
+
+  function clearResult () {
+    result = null
+  }
 </script>
 
 <svelte:head>
@@ -39,15 +70,28 @@
 
 <svelte:body on:keydown={handleKeydown} />
 
+<style>
+  .result {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    overflow-y: auto;
+  }
+</style>
+
 <div class='container'>
   <ImageLoader on:load={replaceImage} />
   <button class='btn btn-primary' on:click={addHead}>加一顆頭</button>
+  <button class='btn btn-outline-secondary' on:click={output}>下載圖片</button>
   <Canvas bind:canvas />
 
   {#if canvas}
     {#if image}
       {#each [image] as image (image.src)}
-        <Image {canvas} {image} />
+        <Image {canvas} {image} bind:scale />
       {/each}
     {/if}
 
@@ -56,3 +100,15 @@
     {/each}
   {/if}
 </div>
+
+{#if result}
+  <div class='result'>
+    <div class='container'>
+      <div class='d-flex'>
+        <div class='flex-fill'>完成了! 請對圖片按右鍵另存:</div>
+        <button class='btn btn-primary' on:click={clearResult}>繼續編輯</button>
+      </div>
+      <img src={result} style='max-width: 100%;' />
+    </div>
+  </div>
+{/if}
