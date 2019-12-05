@@ -1,10 +1,13 @@
 <script>
   import { fabric } from 'fabric'
   import ImageLoader from './ImageLoader.svelte'
+  import AddHeadButton from './AddHeadButton.svelte'
   import Canvas from './Canvas.svelte'
   import Image from './Image.svelte'
   import Head from './Head.svelte'
   import Footer from './Footer.svelte'
+  import kyaru from './images/kyaru.png'
+  import kyaru2 from './images/kyaru2.png'
 
   let canvas, image, scale, heads = []
   let result
@@ -29,8 +32,8 @@
     heads = []
   }
 
-  function addHead () {
-    heads = [...heads, { id: Date.now() }]
+  function addHead (e) {
+    heads = [...heads, e.detail.head]
   }
 
   function output () {
@@ -86,20 +89,25 @@
 </style>
 
 <div class='container'>
-  <h1>接頭霸王 v0.1</h1>
+  <h1>接頭霸王 v0.2</h1>
   <div class='form-row'>
     <div class='col form-group'>
-      <label>選一張圖:</label>
+      <div>第一步, 選擇原圖:</div>
       <ImageLoader on:load={replaceImage} />
     </div>
     <div class='col form-group'>
-      <label>加頭:</label>
-      <button class='btn btn-outline-secondary' on:click={addHead}>
-        加一顆頭
-      </button>
+      <div>第二步, 加頭:</div>
+      <div class='btn-group'>
+        <AddHeadButton source={kyaru} on:add={addHead} />
+        <AddHeadButton source={kyaru2} on:add={addHead} />
+      </div>
+    </div>
+    <div class='col'>
+      <div>第三步, 把頭拖到喜歡的地方,</div>
+      <div>(可拖拉控制點翻轉圖片!)</div>
     </div>
     <div class='col form-group'>
-      <label>下載並分享:</label>
+      <div>最後, 下載並分享:</div>
       <button class='btn btn-outline-secondary' on:click={output}>
         下載圖片
       </button>

@@ -3,13 +3,13 @@
   import { fabric } from 'fabric'
   import kyaru from './images/kyaru.png'
 
-  export let canvas, head
+  export let canvas, head, source
 
   let fabricImage
 
   onMount(() => {
     const image = new Image()
-    image.src = kyaru
+    image.src = head.source
     image.onload = function () {
       fabricImage = new fabric.Image(image, {
         head,
