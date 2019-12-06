@@ -39,27 +39,12 @@
     const width = image ? image.width : canvas.width
     const height = image ? image.height : canvas.height
 
-    const outputCanvas = new fabric.Canvas(document.createElement('canvas'), {
-      width, height
+    result = canvas.toDataURL({
+      format: 'png',
+      multiplier: 1 / scale,
+      width: width * scale,
+      height: height * scale
     })
-    // add original image
-    if (image) {
-      outputCanvas.add(new fabric.Image(image))
-    } else {
-      scale = 1
-    }
-    // add heads
-    canvas.getObjects().filter(object => object.head).forEach(image => {
-      outputCanvas.add(new fabric.Image(image.head.image, {
-        scaleX: image.scaleX / scale,
-        scaleY: image.scaleY / scale,
-        left: image.left / scale,
-        top: image.top / scale,
-        angle: image.angle,
-        flipX: image.flipX
-      }))
-    })
-    result = outputCanvas.toDataURL('png')
   }
 
   function clearResult () {
