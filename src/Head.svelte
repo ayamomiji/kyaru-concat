@@ -1,7 +1,6 @@
 <script>
   import { onMount, onDestroy } from 'svelte'
   import { fabric } from 'fabric'
-  import kyaru from './images/kyaru.png'
 
   export let canvas, head, source
 
