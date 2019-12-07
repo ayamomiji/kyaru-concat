@@ -81,7 +81,7 @@
     </div>
     <div class='col form-group'>
       <div>第二步, 加頭:</div>
-      <div class='btn-group'>
+      <div class='d-flex flex-wrap'>
         {#each images as image}
           <AddHeadButton source={image} on:add={addHead} />
         {/each}
