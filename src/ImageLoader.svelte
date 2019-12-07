@@ -25,6 +25,7 @@
 
   function dispatchImage (src) {
     const image = new Image()
+    image.setAttribute('crossOrigin', 'anonymous')
     image.src = src
     image.onload = function () {
       dispatch('load', { image })
