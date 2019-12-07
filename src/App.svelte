@@ -73,7 +73,7 @@
 </style>
 
 <div class='container'>
-  <h1>接頭霸王 v0.4</h1>
+  <h1>接頭霸王 <small class='text-muted'>v0.5</small></h1>
   <div class='form-row'>
     <div class='col form-group'>
       <div>第一步, 選擇原圖:</div>
