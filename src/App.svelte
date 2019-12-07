@@ -69,6 +69,7 @@
     bottom: 0;
     background-color: white;
     overflow-y: auto;
+    z-index: 10;
   }
 </style>
 
