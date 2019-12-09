@@ -3,7 +3,7 @@
 
   const dispatch = createEventDispatcher()
 
-  let fileInput, urlInput
+  let fileInput
 
   function loadImage (e) {
     const reader = new FileReader()
@@ -16,11 +16,6 @@
 
   function triggerInput () {
     fileInput.click()
-  }
-
-  function loadURL () {
-    dispatchImage(urlInput.value)
-    urlInput.value = null
   }
 
   function dispatchImage (src) {
@@ -39,13 +34,3 @@
 <button class='btn btn-outline-secondary' on:click={triggerInput}>
   上傳圖片
 </button>
-
-<div class='input-group'>
-  <input type='text' class='form-control' placeholder='或者輸入圖片網址...'
-      bind:this={urlInput} />
-  <div class='input-group-append'>
-    <button class='btn btn-outline-secondary' on:click={loadURL}>
-      讀取網址
-    </button>
-  </div>
-</div>
