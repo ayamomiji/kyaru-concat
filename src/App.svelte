@@ -76,30 +76,32 @@
 <div class='container'>
   <h1>接頭霸王 <small class='text-muted'>v0.6</small></h1>
   <div class='form-row'>
-    <div class='col form-group'>
+    <div class='col'>
       <div>第一步, 選擇原圖:</div>
       <ImageLoader on:load={replaceImage} />
-    </div>
-    <div class='col form-group'>
-      <div>第二步, 加頭:</div>
-      <div class='d-flex flex-wrap'>
-        {#each images as image}
-          <AddHeadButton source={image} on:add={addHead} />
-        {/each}
-      </div>
     </div>
     <div class='col'>
       <div>第三步, 把頭拖到喜歡的地方,</div>
       <div class='text-muted'>可拖拉控制點翻轉圖片!</div>
       <div class='text-muted'>按 delete 刪除多餘的頭.</div>
     </div>
-    <div class='col form-group'>
+    <div class='col'>
       <div>最後, 下載並分享:</div>
       <button class='btn btn-outline-secondary' on:click={output}>
         下載圖片
       </button>
     </div>
   </div>
+
+  <div>
+    <div>第二步, 加頭:</div>
+    <div class='d-flex'>
+      {#each images as image}
+        <AddHeadButton source={image} on:add={addHead} />
+      {/each}
+    </div>
+  </div>
+
   <Canvas bind:canvas />
   <Footer />
 
