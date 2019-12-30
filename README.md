@@ -18,4 +18,5 @@ npm run deploy
 
 ## License
 
-kyaru-concat is released under the MIT License.
+The source code of of kyaru-concat is released under the MIT License.
+All images are property of their respective owners.
