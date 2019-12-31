@@ -10,6 +10,6 @@
   }
 </script>
 
-<button class='btn btn-outline-secondary mr-1 mb-1' on:click={addHead}>
+<button class='btn btn-outline-secondary' on:click={addHead}>
   <img src={source} height='50' />
 </button>

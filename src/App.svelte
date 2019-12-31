@@ -95,7 +95,7 @@
 
   <div>
     <div>第二步, 加頭:</div>
-    <div class='d-flex'>
+    <div class='btn-group'>
       {#each images as image}
         <AddHeadButton source={image} on:add={addHead} />
       {/each}
