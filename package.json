@@ -5,7 +5,7 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
-    "deploy": "now --prod --name kyaru-concat"
+    "deploy": "now --prod"
   },
   "devDependencies": {
     "@rollup/plugin-url": "^4.0.0",
