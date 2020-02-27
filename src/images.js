@@ -10,8 +10,9 @@ import kyaru9 from './images/kyaru9.png'
 import kyaru10 from './images/kyaru10.png'
 import kyaru11 from './images/kyaru11.png'
 import kyaru12 from './images/kyaru12.png'
+import kyaru13 from './images/kyaru13.png'
 
 export default [
   kyaru, kyaru2, kyaru3, kyaru4, kyaru5, kyaru6, kyaru7, kyaru8, kyaru9,
-  kyaru10, kyaru11, kyaru12
+  kyaru10, kyaru11, kyaru12, kyaru13
 ]
