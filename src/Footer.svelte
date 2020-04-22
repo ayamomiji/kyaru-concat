@@ -11,7 +11,7 @@
     網站開發: <a href='http://ayaya.tw' target='_blank'>ayaya.tw</a>
     特別感謝: <a href='https://www.pixiv.net/member.php?id=5676585' target='_blank'>
       星爆大師 YuyuSuika
-    </a>
+    </a>, 妃芽♪
   </div>
 
   <div class='text-muted small text-center'>
