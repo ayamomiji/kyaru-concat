@@ -19,4 +19,10 @@
     本網站使用的遊戲圖像的版權,
     商標權和其他知識產權屬於原內容提供者 (So-net Taiwan, Cygames).
   </div>
+
+  <div class='text-nuted small text-center'>
+    若您喜歡本站, 請考慮
+    <a href='http://ayaya.tw/donate/' target='_blank'>贊助</a>
+    分擔伺服器費用.
+  </div>
 </div>
