@@ -6,7 +6,7 @@
   import Image from './Image.svelte'
   import Head from './Head.svelte'
   import Footer from './Footer.svelte'
-  import imageSets from './images'
+  import images from './images'
 
   let canvas, image, scale, heads = []
   let result
@@ -95,12 +95,8 @@
 
   <div>
     <div>第二步, 加頭:</div>
-    {#each imageSets as imageSet}
-      <div class='btn-group mb-1'>
-        {#each imageSet as image}
-          <AddHeadButton source={image} on:add={addHead} />
-        {/each}
-      </div>
+    {#each images as image}
+      <AddHeadButton source={image} on:add={addHead} />
     {/each}
   </div>
 
