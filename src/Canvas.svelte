@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import { fabric } from 'fabric'
 
-  export const width = Math.min(screen.width, 1140)
+  export const width = 1110 - 250
   export const height = width * 0.75
   export let canvas
 

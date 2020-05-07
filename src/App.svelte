@@ -71,10 +71,14 @@
     overflow-y: auto;
     z-index: 10;
   }
+
+  .images {
+    width: 250px;
+  }
 </style>
 
 <div class='container'>
-  <h1>接頭霸王 <small class='text-muted'>v0.8</small></h1>
+  <h1>接頭霸王 <small class='text-muted'>v0.9</small></h1>
   <div class='form-row'>
     <div class='col'>
       <div>第一步, 選擇原圖:</div>
@@ -93,14 +97,21 @@
     </div>
   </div>
 
-  <div>
-    <div>第二步, 加頭:</div>
-    {#each images as image}
-      <AddHeadButton source={image} on:add={addHead} />
-    {/each}
+  <div class='d-flex'>
+    <div class='images'>
+      <div>第二步, 加頭:</div>
+      <div class='d-flex flex-wrap'>
+        {#each images as image}
+          <AddHeadButton source={image} on:add={addHead} />
+        {/each}
+      </div>
+    </div>
+
+    <div class='flex-fill'>
+      <Canvas bind:canvas />
+    </div>
   </div>
 
-  <Canvas bind:canvas />
   <Footer />
 
   {#if canvas}
