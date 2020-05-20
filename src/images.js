@@ -21,9 +21,16 @@ import kyaru20 from './images/kyaru20.png'
 import kyaru21 from './images/kyaru21.png'
 import kyaru22 from './images/kyaru22.png'
 import kyaru23 from './images/kyaru23.png'
+import kyaru24 from './images/kyaru24.png'
+import kyaru25 from './images/kyaru25.png'
+import kyaru26 from './images/kyaru26.png'
+import kyaru27 from './images/kyaru27.png'
+import kyaru28 from './images/kyaru28.png'
+import kyaru29 from './images/kyaru29.png'
 
 export default [
   kyaru, kyaru2, kyaru3, kyaru4, kyaru5, kyaru6, kyaru7, kyaru8, kyaru9,
   kyaru10, kyaru11, kyaru12, kyaru13, kyaru14, kyaru15, kyaru16, kyaru17,
-  kyaru18, kyaru19, kyaru20, kyaru21, kyaru22, kyaru23
+  kyaru18, kyaru19, kyaru20, kyaru21, kyaru22, kyaru23, kyaru24, kyaru25,
+  kyaru26, kyaru27, kyaru28, kyaru29
 ]
