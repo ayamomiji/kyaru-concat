@@ -78,7 +78,7 @@
 </style>
 
 <div class='container'>
-  <h1>接頭霸王 <small class='text-muted'>v0.9</small></h1>
+  <h1>接頭霸王 <small class='text-muted'>v0.10</small></h1>
   <div class='form-row'>
     <div class='col'>
       <div>第一步, 選擇原圖:</div>
