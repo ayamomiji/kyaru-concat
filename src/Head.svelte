@@ -10,13 +10,16 @@
     const image = new Image()
     image.src = head.source
     image.onload = function () {
+      const scale = (canvas.width / 4) / image.width
       fabricImage = new fabric.Image(image, {
         head,
         rotatingPointOffset: 15,
         cornerStyle: 'circle',
         cornerColor: 'red',
         transparentCorners: false,
-        borderColor: 'red'
+        borderColor: 'red',
+        scaleX: scale,
+        scaleY: scale
       })
       fabricImage.setControlVisible('ml', false)
       fabricImage.setControlVisible('mt', false)
