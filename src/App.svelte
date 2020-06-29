@@ -50,6 +50,24 @@
   function clearResult () {
     result = null
   }
+
+  let flip = false
+
+  function restart() {
+    heads = []
+  }
+
+  function reverse() {
+    flip = !flip
+    let nodes = document.getElementsByClassName('add-head-button')
+    for(let element of nodes) {
+      if(flip) {
+        element.style.transform = 'rotateY(180deg)'
+      } else {
+        element.style.transform = ''
+      }
+    }
+  }
 </script>
 
 <svelte:head>
@@ -105,6 +123,20 @@
           <AddHeadButton source={image} on:add={addHead} />
         {/each}
       </div>
+
+      <div class='flex-row d-flex justify-content-center my-3'>
+        <div class='col text-center'>
+          <button class='btn btn-outline-secondary' on:click={restart}>
+            清空頭部
+          </button>
+        </div>
+
+        <div class='col text-center'>
+          <button class='btn btn-outline-secondary' on:click={reverse}>
+            水平鏡像
+          </button>
+        </div>
+      </div>
     </div>
 
     <div class='flex-fill'>
@@ -122,7 +154,7 @@
     {/if}
 
     {#each heads as head (head.id)}
-      <Head {canvas} {head} />
+      <Head {canvas} {head} {flip}/>
     {/each}
   {/if}
 </div>

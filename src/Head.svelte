@@ -2,7 +2,7 @@
   import { onMount, onDestroy } from 'svelte'
   import { fabric } from 'fabric'
 
-  export let canvas, head, source
+  export let canvas, head, flip, source
 
   let fabricImage
 
@@ -19,7 +19,8 @@
         transparentCorners: false,
         borderColor: 'red',
         scaleX: scale,
-        scaleY: scale
+        scaleY: scale,
+        flipX: flip
       })
       fabricImage.setControlVisible('ml', false)
       fabricImage.setControlVisible('mt', false)
