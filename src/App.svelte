@@ -97,6 +97,12 @@
 
 <div class='container'>
   <h1>接頭霸王 <small class='text-muted'>v0.10</small></h1>
+  <div class="alert alert-primary" role="alert">
+    我的新作:
+    <a href='https://th.bunya.tw/' target='_blank' rel='nofollow'>東方雲夢閣</a>
+    歡迎前來遊玩!
+  </div>
+
   <div class='form-row'>
     <div class='col'>
       <div>第一步, 選擇原圖:</div>
